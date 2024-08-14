@@ -1,2 +1,2 @@
-# Pesquisa-e-Ordena-o-
+# Pesquisa-e-ordenacao
 Códigos de pesquisas  e Ordenação 
