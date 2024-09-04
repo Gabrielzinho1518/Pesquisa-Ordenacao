@@ -1,0 +1,97 @@
+package pacote;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+
+public class Util {
+
+    /**
+     * Método estático que gera uma palavra aleatória a partir de um tamanho
+     * @param tamanho - quantidade de caracteres da palavra
+     * @return uma palavra aleatória
+     */
+    public static String gerarPalavra(int tamanho) {
+        StringBuilder letras = new StringBuilder("abcdefghijklmnopqrstuvwxyz ");
+        Random gerador = new Random();
+        StringBuilder palavra = new StringBuilder();
+
+        for (int i = 0; i < tamanho; i++) {
+            palavra.append(letras.charAt(gerador.nextInt(letras.length())));
+        }
+
+        return palavra.toString();
+    }
+
+    /**
+     * Método estático que gera um nome aleatório a partir de um tamanho
+     * @param tamanhoNome - quantidade de caracteres do nome
+     * @return um nome aleatório
+     */
+    private static String gerarNomeAleatorio(int tamanhoNome) {
+        StringBuilder letras = new StringBuilder("abcdefghijklmnopqrstuvwxyz");
+        Random gerador = new Random();
+        StringBuilder nome = new StringBuilder();
+
+        for (int i = 0; i < tamanhoNome; i++) {
+            nome.append(letras.charAt(gerador.nextInt(letras.length())));
+        }
+        return nome.toString();
+    }
+
+    /**
+     * Método estático que gera uma idade aleatória entre 18 e 70 anos
+     * @return uma idade aleatória
+     */
+    private static int gerarIdadeAleatoria() {
+        Random gerador = new Random();
+        return gerador.nextInt(18, 70);
+    }
+
+    /**
+     * Método estático que gera uma lista de alunos com nomes e idades aleatórios
+     * @param quantidade - quantidade de alunos a serem gerados
+     * @param tamanhoNome - quantidade de caracteres do nome a ser gerado
+     * @return uma lista de alunos gerada
+     */
+    public static List<Aluno> gerarNomesEIdades(int quantidade, int tamanhoNome) {
+        List<Aluno> lista = new ArrayList<>();
+        for (int i = 0; i < quantidade; i++) {
+            String nome = gerarNomeAleatorio(tamanhoNome);
+            int idade = gerarIdadeAleatoria();
+            lista.add(new Aluno(nome, idade));
+        }
+        return lista;
+    }
+
+    /**
+     * Método estático que exibe a lista de alunos ordenada conforme o método especificado
+     * @param lista - a lista de alunos a ser ordenada
+     * @param metodo - o método de ordenação a ser utilizado (bolha, selecao, insercao, sort)
+     */
+    public static void exibirOrdenacao(List<Aluno> lista, String metodo) {
+
+        switch (metodo) {
+            case "bolha":
+                Ordenação.metodoBolha(lista);
+                break;
+            case "selecao":
+                Ordenação.metodoSelecao(lista);
+                break;
+            case "insercao":
+                Ordenação.metodoInsercao(lista);
+                break;
+            case "sort":
+                Collections.sort(lista);
+                break;
+            default:
+                throw new IllegalArgumentException("Método de ordenação inválido: " + metodo);
+        }
+
+  
+        for (Aluno aluno : lista) {
+            System.out.println(aluno);
+        }
+    }
+}
