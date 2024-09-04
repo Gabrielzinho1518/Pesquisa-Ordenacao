@@ -1,0 +1,67 @@
+package pacote;
+
+import java.util.ArrayList;
+import java.util.List;
+public class Ordenação {
+  public static void bolha(List<Aluno> lista) {
+      int aux;
+      boolean houveTroca = true;
+      int i;
+      int j;
+      int vetor[]= {1,2,3,4,5};
+      
+      for(int i1=0; i1<vetor.length;++i1){
+      }
+  }
+    	  
+    	  static void metodoBolha(List<Aluno> lista) {
+    	        Aluno aux;
+    	        boolean houveTroca;
+    	        for (int i = 0; i < lista.size() - 1; i++) {
+    	            houveTroca = false;
+    	            for (int j = 0; j < lista.size() - 1 - i; j++) {
+    	                if (lista.get(j).compareTo(lista.get(j + 1)) > 0) {
+    	                    aux = lista.get(j);
+    	                    lista.set(j, lista.get(j + 1));
+    	                    lista.set(j + 1, aux);
+    	                    houveTroca = true;
+    	                }
+    	            }
+    	            if (!houveTroca) {
+    	                break;
+    	            }
+    	        }
+    	    }
+
+    	    // Ordenação pelo método seleção
+    	    public static void metodoSelecao(List<Aluno> lista) {
+    	        int posMenor;
+    	        Aluno aux;
+    	        for (int i = 0; i < lista.size() - 1; i++) {
+    	            posMenor = i;
+    	            for (int j = i + 1; j < lista.size(); j++) {
+    	                if (lista.get(j).compareTo(lista.get(posMenor)) < 0) {
+    	                    posMenor = j;
+    	                }
+    	            }
+    	            if (posMenor != i) {
+    	                aux = lista.get(i);
+    	                lista.set(i, lista.get(posMenor));
+    	                lista.set(posMenor, aux);
+    	            }
+    	        }
+    	    }
+
+    	    // Ordenação pelo método inserção
+    	    public static void metodoInsercao(List<Aluno> lista) {
+    	        for (int i = 1; i < lista.size(); i++) {
+    	            Aluno aux = lista.get(i);
+    	            int j = i - 1;
+    	            while (j >= 0 && lista.get(j).compareTo(aux) > 0) {
+    	                lista.set(j + 1, lista.get(j));
+    	                j--;
+    	            }
+    	            lista.set(j + 1, aux);
+    	        }
+    	    }
+    	}
