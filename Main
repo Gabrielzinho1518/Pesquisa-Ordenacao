@@ -1,0 +1,33 @@
+package pacote;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+
+public class Principal {
+	
+    public static void main(String[] args) {
+    
+    	List<Aluno> listaBolha = new ArrayList<>();
+        List<Aluno> listaSelecao = new ArrayList<>();
+        List<Aluno> listaInsercao = new ArrayList<>();
+        List<Aluno> listaSort = new ArrayList<>();
+
+        int quantidade = 60000; // 60 mil alunos gerados.
+
+        Random gerador = new Random();
+        int tamanhoNome = gerador.nextInt(4, 5); 
+        Aluno um = new Aluno(Util.gerarPalavra(10), gerador.nextInt(18,70));
+        // Gerando os nomes e idades.
+        listaBolha = Util.gerarNomesEIdades(quantidade, tamanhoNome);
+        listaSelecao = Util.gerarNomesEIdades(quantidade, tamanhoNome);
+        listaInsercao = Util.gerarNomesEIdades(quantidade, tamanhoNome);
+        listaSort = Util.gerarNomesEIdades(quantidade, tamanhoNome);
+        
+        // Testando os métodos de Ordenação ->   
+        
+         Util.exibirOrdenacao(listaBolha,"bolha");
+        
+    }
+}
