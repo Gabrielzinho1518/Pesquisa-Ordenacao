@@ -1,0 +1,40 @@
+Avaliação semestral de Pesquisa e Ordenação
+18/09/2024   – 25/09/2024 feito atrasado.
+Nome: Gabriel Pereira Saccol
+
+Enviar o arquivo da avaliação para alexz@ufn.edu.br. Assunto deve ser: Prova Pesquisa e Ordenação.
+
+1) O que é ordenação e qual o seu papel nos sistemas de informação?
+Ordenação é a organização em alguma ordem específica que a pessoa escolher, como ordem crescente ou decrescente, com alguma base, exemplo, números na maioria das vezes e a ordenação facilita a busca, manipulação dos dados e organizar grandes dados armazenados no sistema.
+
+2) Na construção de algoritmos, por exemplo, algoritmos de ordenação, há o conceito de complexidade. Assim, em ordenação como se calcula ou se mede a complexidade?
+Quanto mais esforço, maior a complexidade
+ maior a complexidade, menor a eficiência do programa.
+Melhor caso (O): Desempenho quando os dados estão quase ou totalmente ordenados.
+Pior caso (O): Situação em que o algoritmo tem o maior número de comparações e trocas.
+Caso médio (O): Comportamento típico considerando entradas aleatórias.
+
+3) Novamente, no contexto de algoritmos de ordenação, há algoritmos estáveis e instáveis. Explique o que isso significa.
+Estáveis: Mantêm a ordem relativa de elementos iguais. Exemplo: Bubble Sort.
+Instáveis: Podem alterar a ordem relativa de elementos iguais. Exemplo: Quick Sort.
+
+4) Dos algoritmos estudados (bolha, seleção, inserção e pente), há um desses que tem um desempenho muito bom. Qual é? E qual o recurso computacional que ele utiliza para ser tão melhor que os outros? Explique a resposta.
+O método de Inserção, muito usado para listas pequenas e simples, ele percorre a lista, insere cada elemento na posição correta em relação aos anteriores, repetindo até a lista ficar ordenada.
+
+5) Observe a sequencia de números no vetor:
+    0   1   2   3   4   5   6   - indices
+    7   3   5   1   8   2   5   - valores
+
+a)	quantas comparações e trocas vão ocorrer usando o bolha?
+Comparações: 21 comparações
+Trocas: 11 trocas
+b) quantas comparações e trocas vão ocorrer usando o pente?
+Comparações: 16 comparações
+Trocas: 5 trocas
+
+6) Dos métodos estudados (bolha, seleção, inserção e pente), quais são estáveis e quais são instáveis? 
+Estáveis: Inserção, Bolha.
+Instáveis: Seleção, Pente.
+
+7) No processo de ordenação de listas contendo objetos, como pessoas que derivam da classe Pessoa(nome, email, telefone, curso), para usar o método sort() em Java ou C Sharp é preciso realizar alterações na classe Pessoa para que a ordenação ocorra corretamente. Exemplifique e explique qual(is) é(são) essa(s) alterações? Assuma que o atributo chave de ordenação da classe pessoa é nome seguido de curso.
+Implemente a interface Comparable e sobrescreva o método compareTo em Java, no método de comparação, compare primeiro pelo nome e, se forem iguais, compare pelo curso e depois da comparação, podemos usar o sort ( ) para ordenar a lista. 
