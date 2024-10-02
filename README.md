@@ -10,7 +10,8 @@ Métodos de ordenação:
     - shell -> distancia 
 
 - Por não simplicidade de código: 
-    - Merge 
+    - Merge
+        - Estavél  
         - Composto por 2 métodos, sendo um deles recursivo 
         - tem comportamento de arvore binária
         - usado no sort do Java
@@ -18,7 +19,8 @@ Métodos de ordenação:
         - sempre divide (recursivamente) a estrutura no meio 
         - Ele ordena durante o retorno da recursão 
         - usa um vetor ou lista temporário(a)
-    - Quick 
+    - Quick
+        - Instavél    
         - Composto por 2 métodos, sendo um deles recursivo
         - usado nor sort C Sharp  
         - Tem comportamento de arvore binária
@@ -29,7 +31,7 @@ Métodos de ordenação:
     - Bucket - ordenação por dígito
     - Radix
 
-
+    
 
 
 
