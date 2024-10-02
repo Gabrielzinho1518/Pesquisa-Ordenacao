@@ -1,13 +1,13 @@
 # Pesquisa-e-ordenacao
 Códigos de pesquisas  e Ordenação 
 Métodos de ordenação:
-    - Por simplicidade de código: 
-        - bolha (bubble)
-            - agitação ( shake ou cocktail )
-            - pende (comb) -> distancia 
-        - seleção (selection)
-        - inserção (insertion)
-            - shell -> distancia 
+- Por simplicidade de código: 
+  - bolha (bubble)
+    - agitação ( shake ou cocktail )
+    - pende (comb) -> distancia 
+    - seleção (selection)
+    - inserção (insertion)
+    - shell -> distancia 
 
 - Por não simplicidade de código: 
     - Merge 
