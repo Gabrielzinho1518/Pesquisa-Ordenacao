@@ -1,0 +1,25 @@
+package pacote;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+
+
+public class Principal {
+    public static void main(String[] args) {
+        ArrayList<Integer> listaDesordenada = new ArrayList<>();
+        Util.preencherDesordenado(listaDesordenada, 100000);
+
+        ArrayList<Integer> listaOrdenada = new ArrayList<>();
+        Util.preencherOrdenado(listaOrdenada, 50000);
+
+        // Testar pesquisa binária
+        int valorParaBuscar = listaOrdenada.get(0); // Exemplo de valor a ser buscado
+        long tempoInicio = System.nanoTime();
+        boolean encontrado = Util.pesquisaBinariaContains(valorParaBuscar, listaOrdenada);
+        long tempoFim = System.nanoTime();
+
+        System.out.println("Valor encontrado: " + encontrado);
+        System.out.println("Tempo (ms): " + (tempoFim - tempoInicio) / 1_000_000.0);
+    }
+}
