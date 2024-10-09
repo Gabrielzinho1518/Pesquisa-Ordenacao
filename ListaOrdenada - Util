@@ -1,0 +1,41 @@
+package pacote;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+
+public class Util {
+    public static void preencherOrdenado(ArrayList<Integer> lista, int n) {
+        Random gerador = new Random();
+        for (int i = 0; i < n; i++) {
+            lista.add(gerador.nextInt(100000));
+        }
+        Collections.sort(lista); // Ordena a lista após preenchê-la
+    }
+
+    public static void preencherDesordenado(ArrayList<Integer> lista, int n) {
+        Random gerador = new Random();
+        for (int i = 0; i < n; i++) {
+            lista.add(gerador.nextInt(100000));
+        }
+    }
+
+    public static boolean pesquisaBinariaContains(int valor, ArrayList<Integer> lista) {
+        int ini = 0;
+        int fim = lista.size() - 1;
+        int meio;
+
+        while (ini <= fim) {
+            meio = (ini + fim) / 2;
+            if (lista.get(meio) == valor) {
+                return true; // Valor encontrado
+            } else if (lista.get(meio) < valor) {
+                ini = meio + 1; // Busca na metade direita
+            } else {
+                fim = meio - 1; // Busca na metade esquerda
+            }
+        }
+        return false; // Valor não encontrado
+    }
+}
+
