@@ -3,17 +3,21 @@ package pacote;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
+import java.util.TreeSet;
 
 
 public class Principal {
     public static void main(String[] args) {
         ArrayList<Integer> listaDesordenada = new ArrayList<>();
-        Util.preencherDesordenado(listaDesordenada, 100000);
+        Util.preencherOrdenado(listaDesordenada, 100000);
 
         ArrayList<Integer> listaOrdenada = new ArrayList<>();
         Util.preencherOrdenado(listaOrdenada, 50000);
+        TreeSet<Integer> arvore = new TreeSet<>();
+        Util.preencherArvore(arvore, 200000);
+        System.out.println(arvore);
 
-        // Testar pesquisa binária
+        // Testar pesquisa binária:
         int valorParaBuscar = listaOrdenada.get(0); // Exemplo de valor a ser buscado
         long tempoInicio = System.nanoTime();
         boolean encontrado = Util.pesquisaBinariaContains(valorParaBuscar, listaOrdenada);
@@ -21,5 +25,7 @@ public class Principal {
 
         System.out.println("Valor encontrado: " + encontrado);
         System.out.println("Tempo (ms): " + (tempoFim - tempoInicio) / 1_000_000.0);
+        long tempoinicio = System.nanoTime();
+       
     }
 }
