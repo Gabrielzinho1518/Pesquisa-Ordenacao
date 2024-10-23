@@ -1,0 +1,29 @@
+package pacote;
+
+public class CodigoInocente {
+
+    public static void main(String[] args) {
+        // Exemplo de uso (você pode personalizar conforme necessário)
+        byte[] a = {1, 2, 3}; // palavra 
+        byte[] b = {1, 2, 3, 1, 2, 3}; 
+        int ocorrs = inocente(a, a.length, b, b.length);
+        System.out.println("Ocorrências: " + ocorrs);
+    }
+
+    public static int inocente(byte a[], int m, byte b[], int n) {
+        int ocorrs = 0;
+        for (int k = m; k <= n; ++k) {
+            int i = m, j = k;
+            while (i >= 1 && a[i - 1] == b[j - 1]) {
+                --i;
+                --j;
+            }
+            if (i < 1) {
+                ++ocorrs; 
+            }
+        }
+        return ocorrs; 
+    }
+}
+
+
